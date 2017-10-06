@@ -7,13 +7,16 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
+plugins {
+  id "com.moowork.node" version "1.2.0"
+  id "java"
+  id "eclipse"
+  id "idea"
+  id "org.springframework.boot" version "1.5.7.RELEASE"
+}
 
 jar {
-    baseName = 'gs-spring-boot'
+    baseName = 'react-boot'
     version =  '0.1.0'
 }
 
@@ -35,6 +38,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
     testCompile("junit:junit")
-	
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
