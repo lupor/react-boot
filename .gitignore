@@ -1,5 +1,15 @@
 .gradle
 /build/
+.*.md.html
+.DS_Store
+.classpath
+.factorypath
+.idea
+.metadata
+.project
+.recommenders
+.settings
+.springBeans
 
 # Ignore Gradle GUI config
 gradle-app.setting
