@@ -1,0 +1,12 @@
+{
+  "name": "react-boot",
+  "version": "1.0.0",
+  "description": "Application to manage todos",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "path": "^0.12.7",
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
