@@ -1,0 +1,15 @@
+.todo-card {
+  display: block;
+  padding: 1rem;
+}
+
+.todo-card__title {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.todo-card__description {
+  display: block;
+  font-size: 0.8rem;
+}
