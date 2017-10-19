@@ -2,9 +2,14 @@ import React from "react";
 import "./todo-card.css";
 
 export function TodoCard(props) {
+  const { todo, deleteFn, updateFn } = props;
   return (
     <div className="todo-card">
-      <span className="todo-card__title">{props.title}</span>
+      <input type="checkbox" checked={todo.completed} />
+      <span className="todo-card__title">{todo.title}</span>
+      <button type="button" onClick={() => deleteFn(todo.id)}>
+        X
+      </button>
     </div>
   );
 }

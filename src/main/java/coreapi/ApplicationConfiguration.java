@@ -26,7 +26,7 @@ public class ApplicationConfiguration extends RepositoryRestConfigurerAdapter {
 		config.addAllowedOrigin("http://localhost:8080");
 		config.addAllowedHeader("*");
 		config.addAllowedMethod("*");
-		source.registerCorsConfiguration("/todos", config);
+		source.registerCorsConfiguration("/**", config);
 		FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
 		bean.setOrder(0);
 		return bean;

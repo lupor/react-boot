@@ -4,19 +4,33 @@ import { observer } from "mobx-react";
 
 @observer
 export class TodoList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.store = props.todoStore;
+  }
   render() {
-    const store = this.props.todoStore;
-
     return (
       <div>
         <ul>
-          {store.todos.map(todo => (
+          {this.store.todos.map(todo => (
             <li key={todo.id}>
-              <TodoCard title={todo.title} />
+              <TodoCard
+                todo={todo}
+                deleteFn={this.removeTodo.bind(this)}
+                updateFn={this.updateTodo.bind(this)}
+              />
             </li>
           ))}
         </ul>
       </div>
     );
+  }
+
+  removeTodo(id) {
+    this.store.deleteTodo(id);
+  }
+
+  updateTodo(id) {
+    this.store.updateTodo(id);
   }
 }
