@@ -1,0 +1,1 @@
+INSERT INTO TODO (id, title, description, status) VALUES (1, 'First Todo', 'Have to do something', 'OPEN')

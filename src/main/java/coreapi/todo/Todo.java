@@ -1,22 +1,43 @@
 package coreapi.todo;
 
-import coreapi.todo.TodoStatus;
+import javax.persistence.*;
 
+@Entity
+@Table
 public class Todo {
-	public final long id;
-	public final String title;
-	public final String description;
-	public TodoStatus status;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 
-	public Todo(long id, String title, String description){
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.status = TodoStatus.OPEN;
+	private String title;
+	private boolean completed;
+
+	protected Todo() {
 	}
 
-	public void ToggleStatus() {
-		this.status = 
-			(this.status == TodoStatus.OPEN) ? TodoStatus.DONE : TodoStatus.OPEN;
+	public Todo(long id, String title) {
+		this.id = id;
+		this.title = title;
+		this.completed = false;
+	}
+
+	public long getId() {
+		return this.id;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setCompleted(boolean status) {
+		this.completed = status;
+	}
+
+	public boolean getCompleted() {
+		return this.completed;
 	}
 }

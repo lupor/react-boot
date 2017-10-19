@@ -1,14 +1,11 @@
-export class Task {
-  constructor(title) {
-    this.title = title;
-  }
-}
-
 export class Todo {
-  constructor(task, completed = false, assignee = null) {
-    this.task = task;
+  constructor(id = Date.now(), title, completed = false) {
+    this.id = id;
+    this.title = title;
     this.completed = completed;
-    this.assignee = assignee;
-    this.id = Date.now();
+  }
+
+  setId(id) {
+    this.id = id;
   }
 }

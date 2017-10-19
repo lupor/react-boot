@@ -8,6 +8,7 @@ import { TodoStore } from "./state/todo.store";
 export default class App extends React.Component {
   render() {
     const todoStore = new TodoStore();
+    todoStore.fetchTodos();
 
     return (
       <Router>
@@ -35,5 +36,6 @@ export default class App extends React.Component {
     );
   }
 }
-
+console.log("Environment set to:");
+console.log(process.env);
 ReactDOM.render(<App />, document.getElementById("root"));

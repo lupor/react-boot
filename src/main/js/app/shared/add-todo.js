@@ -29,7 +29,7 @@ export class AddTodo extends React.Component {
   }
 
   addTodo() {
-    this.todoStore.addTodo(new Task(this.state.inputValue));
+    this.todoStore.addTodo(this.state.inputValue);
   }
 
   updateInputValue(evt) {

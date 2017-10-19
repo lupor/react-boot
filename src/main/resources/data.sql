@@ -1,0 +1,1 @@
+INSERT INTO TODO (id, title, completed) VALUES (1, 'First Todo', false)

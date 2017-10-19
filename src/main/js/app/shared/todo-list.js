@@ -12,7 +12,7 @@ export class TodoList extends React.Component {
         <ul>
           {store.todos.map(todo => (
             <li key={todo.id}>
-              <TodoCard title={todo.task.title} />
+              <TodoCard title={todo.title} />
             </li>
           ))}
         </ul>

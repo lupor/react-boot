@@ -14,6 +14,8 @@ module.exports = {
     app: "./app/index.js"
   },
   output: {
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     filename: "[name].js",
     chunkFilename: "[id].js"
   },
@@ -37,6 +39,12 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       minChunks: Infinity
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        API_URL: JSON.stringify(process.env.API_URL)
+      }
     })
   ]
 };

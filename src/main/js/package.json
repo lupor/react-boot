@@ -5,6 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "cross-env": "^5.1.0",
+    "env-cmd": "^7.0.0",
+    "isomorphic-fetch": "^2.2.1",
     "mobx": "^3.3.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -28,6 +31,7 @@
     "webpack-dev-server": "^2.9.1"
   },
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "cross-env NODE_ENV=development env-cmd ./config/.env.local webpack-dev-server",
+    "build": "cross-env NODE_ENV=production env-cmd ./config/.env.local webpack -p"
   }
 }
