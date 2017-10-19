@@ -1,7 +1,7 @@
 import React from "react";
-import { TodoList } from "../shared/todo-list";
+import { TodoList } from "../shared/components/todo-list";
 import { TodoStore } from "../state/todo.store";
-import { AddTodo } from "../shared/add-todo";
+import { AddTodo } from "../shared/components/add-todo";
 
 export class Home extends React.Component {
   render() {

@@ -1,1 +1,1 @@
-INSERT INTO TODO (id, title, description, status) VALUES (1, 'First Todo', 'Have to do something', 'OPEN')
+INSERT INTO TODO (id, title, completed) VALUES (1, 'First Todo', false)

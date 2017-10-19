@@ -1,4 +1,4 @@
-package coreapi.todo;
+package coreapi.todos;
 
 import javax.persistence.*;
 
