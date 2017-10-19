@@ -21,7 +21,6 @@ export class HttpService {
 
   generateDefaultHeaders() {
     this.headers = new Headers();
-    this.headers.append("Accept", "application/json");
     this.headers.append("Content-Type", "application/json");
   }
 }

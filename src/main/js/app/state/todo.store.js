@@ -14,13 +14,19 @@ export class TodoStore {
 
   @action
   addTodo(title) {
-    const newTodo = new Todo(null, title);
-    this.todos.push(newTodo);
     const payload = {
       title: title,
       completed: false
     };
-    this.http.post(this.resourceUrl, payload);
+    this.http.post(this.resourceUrl, payload).then(
+      action("createTodoSuccess", todo => {
+        this.todos.push(new Todo(todo.id, todo.title, todo.completed));
+      }),
+      action("createTodoError", error => {
+        this.hasError = true;
+        this.error = error;
+      })
+    );
   }
 
   @action
@@ -41,6 +47,7 @@ export class TodoStore {
       action("fetchTodosError", error => {
         this.hasError = true;
         this.error = error;
+        this.loading = false;
       })
     );
   }
