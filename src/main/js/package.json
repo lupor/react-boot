@@ -5,6 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "clean-dir": "^1.0.3",
+    "cpy-cli": "^1.0.1",
     "cross-env": "^5.1.0",
     "env-cmd": "^7.0.0",
     "isomorphic-fetch": "^2.2.1",
@@ -31,7 +33,16 @@
     "webpack-dev-server": "^2.9.1"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development env-cmd ./config/.env.local webpack-dev-server",
-    "build": "cross-env NODE_ENV=production env-cmd ./config/.env.local webpack -p"
+    "start":
+      "cross-env NODE_ENV=development env-cmd ./config/.env.local webpack-dev-server",
+    "build:prod":
+      "cross-env NODE_ENV=production env-cmd ./config/.env.production webpack -p",
+    "build:local":
+      "cross-env NODE_ENV=development env-cmd ./config/.env.local webpack",
+    "prebuild:local": "yarn clean:static",
+    "postbuild:local": "yarn copy:build",
+    "clean:static": "./node_modules/.bin/cleandir ../resources/static",
+    "clean:dist": "./node_modules/.bin/cleandir ./dist",
+    "copy:build": "./node_modules/.bin/cpy ./dist/** ../resources/static"
   }
 }
