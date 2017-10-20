@@ -1,5 +1,6 @@
 .gradle
 /build/
+/src/main/resources/static
 .*.md.html
 .DS_Store
 .classpath
